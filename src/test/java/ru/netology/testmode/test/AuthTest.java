@@ -36,7 +36,7 @@ class AuthTest {
         $("[data-test-id='login'] input").setValue(notRegisteredUser.getLogin());
         $("[data-test-id='password'] input").setValue(notRegisteredUser.getPassword());
         $("[data-test-id='action-login']").click();
-        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"));
+        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль")).shouldBe(visible);
 
     }
 
@@ -47,7 +47,7 @@ class AuthTest {
         $("[data-test-id='login'] input").setValue(blockedUser.getLogin());
         $("[data-test-id='password'] input").setValue(blockedUser.getPassword());
         $("[data-test-id='action-login']").click();
-        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Пользователь заблокирован"));
+        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Пользователь заблокирован")).shouldBe(visible);
     }
 
     @Test
@@ -58,7 +58,7 @@ class AuthTest {
         $("[data-test-id='login'] input").setValue((wrongLogin));
         $("[data-test-id='password'] input").setValue(registeredUser.getPassword());
         $("[data-test-id='action-login']").click();
-        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"));
+        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль")).shouldBe(visible);
     }
 
     @Test
@@ -69,6 +69,6 @@ class AuthTest {
         $("[data-test-id='login'] input").setValue((registeredUser.getLogin()));
         $("[data-test-id='password'] input").setValue(wrongPassword);
         $("[data-test-id='action-login']").click();
-        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"));
+        $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль")).shouldBe(visible);
     }
 }
