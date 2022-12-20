@@ -11,6 +11,7 @@ import static ru.netology.testmode.data.DataGenerator.Registration.getRegistered
 import static ru.netology.testmode.data.DataGenerator.Registration.getUser;
 import static ru.netology.testmode.data.DataGenerator.getRandomLogin;
 import static ru.netology.testmode.data.DataGenerator.getRandomPassword;
+import static com.codeborne.selenide.Condition.visible;
 
 class AuthTest {
 
